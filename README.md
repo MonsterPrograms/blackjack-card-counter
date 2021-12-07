@@ -22,5 +22,5 @@ If you appreciate my work regarding this project, then I am accepting crypto don
 BTC: 3EN7RJo2YTboMunQyDjeWhHCMghQ4KKwhG
 
 ETH: 0x8033E095433b94a9557706F09916c97d4bF74313
-LTC: MDTwVgnc1pJk885UygKjc33UARRSn67sH8
 
+LTC: MDTwVgnc1pJk885UygKjc33UARRSn67sH8
