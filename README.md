@@ -16,3 +16,9 @@ Reminders:
 - Count every card that comes out of the new shoe.
 - Place the correct bet amount every round as suggested by the program. For example, if your 1 unit = $10, 2 units = $20, 4 units = $40, etc.
 - Make the correct decisions, play according to basic strategy if you do not need to deviate.
+
+If you appreciate my work regarding this project, then I am accepting crypto donations. Donations are not mandatory, but are highly appreciated. Please note that donations are non-refundable.
+
+BTC: 3EN7RJo2YTboMunQyDjeWhHCMghQ4KKwhG
+ETH: 0x8033E095433b94a9557706F09916c97d4bF74313
+LTC: MDTwVgnc1pJk885UygKjc33UARRSn67sH8
