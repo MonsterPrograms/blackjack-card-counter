@@ -1,0 +1,9 @@
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\bin\Debug\Blackjack-Card-Counter.exe.config
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\bin\Debug\Blackjack-Card-Counter.exe
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\bin\Debug\Blackjack-Card-Counter.pdb
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Debug\Blackjack_Card_Counter.Properties.Resources.resources
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Debug\Blackjack-Card-Counter.csproj.GenerateResource.cache
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Debug\Blackjack-Card-Counter.csproj.CoreCompileInputs.cache
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Debug\Blackjack-Card-Counter.exe
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Debug\Blackjack-Card-Counter.pdb
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Debug\Blackjack_Card_Counter.MainForm.resources
