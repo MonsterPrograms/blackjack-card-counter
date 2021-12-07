@@ -20,5 +20,7 @@ Reminders:
 If you appreciate my work regarding this project, then I am accepting crypto donations. Donations are not mandatory, but are highly appreciated. Please note that donations are non-refundable.
 
 BTC: 3EN7RJo2YTboMunQyDjeWhHCMghQ4KKwhG
+
 ETH: 0x8033E095433b94a9557706F09916c97d4bF74313
 LTC: MDTwVgnc1pJk885UygKjc33UARRSn67sH8
+
