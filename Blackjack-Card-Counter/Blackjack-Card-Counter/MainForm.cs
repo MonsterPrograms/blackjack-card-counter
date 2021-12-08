@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Blackjack_Card_Counter
 {
     public partial class MainForm : Form
     {
+        List<string> cards = new List<string>();
         int totalDecks = 8;
         int totalCards = 416;
         decimal decksRemaining = 8;
@@ -20,11 +23,14 @@ namespace Blackjack_Card_Counter
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtDecksUsed.ReadOnly = false;
+            cards.Clear();
             runningCount = 0;
             trueCount = 0;
             lblRunningCount.Text = $"Running Count: {runningCount}";
             lblTrueCount.Text = $"True Count: {trueCount}";
-            lblBetAmount.Text = $"Bet Amount: 1 Unit";
+            lblBetAmount.Text = "Bet Amount: 1 Unit";
+            lblLast5Cards.Text = "Last 5 Cards: None";
+            lblCardsCounted.Text = $"Cards Counted: 0 of {totalCards}";
             ModifyButtons(true);
             lblInsurance.Text = "Insurance: No";
             lbl16vs9.Text = "16 vs 9: Hit";
@@ -71,6 +77,8 @@ namespace Blackjack_Card_Counter
             totalCards = 52 * totalDecks;
             decksRemaining = totalDecks;
             cardsRemaining = totalCards;
+
+            lblCardsCounted.Text = $"Cards Counted: 0 of {totalCards}";
         }
 
         private void ModifyButtons(bool enabled)
@@ -89,6 +97,35 @@ namespace Blackjack_Card_Counter
             btnTen.Enabled = enabled;
         }
 
+        private void UpdateLast5Cards(Button button = null)
+        {
+            if (button != null)
+            {
+                string buttonText = button.Text;
+
+                if (button.Text == "10 J Q K")
+                {
+                    buttonText = "10";
+                }
+                else if (button.Text == "A / 1")
+                {
+                    buttonText = "A";
+                }
+
+                cards.Add(buttonText);
+            }
+
+            if (cards.Count == 0)
+            {
+                lblLast5Cards.Text = "Last 5 Cards: None";
+            }
+            else
+            {
+                List<string> last5Cards = cards.Skip(Math.Max(0, cards.Count() - 5)).ToList();
+                lblLast5Cards.Text = $"Last 5 Cards: {string.Join(" ", last5Cards.Select(x => x))}";
+            }
+        }
+
         private void UpdateRunningCount(int increment)
         {
             runningCount += increment;
@@ -99,6 +136,8 @@ namespace Blackjack_Card_Counter
         {
             cardsRemaining--;
             decksRemaining = Convert.ToDecimal(cardsRemaining) / Convert.ToDecimal(totalCards) * Convert.ToDecimal(totalDecks);
+
+            UpdateCardsCounted();
 
             if (decksRemaining == 0)
             {
@@ -131,6 +170,12 @@ namespace Blackjack_Card_Counter
             }
         }
 
+        private void UpdateCardsCounted()
+        {
+            int cardsCounted = totalCards - cardsRemaining;
+            lblCardsCounted.Text = $"Cards Counted: {cardsCounted} of {totalCards}";
+        }
+
         private void btnPlus_Click(object sender, EventArgs e)
         {
             if (!Started())
@@ -138,6 +183,7 @@ namespace Blackjack_Card_Counter
                 ConfigureSettings();
             }
 
+            UpdateLast5Cards((Button)sender);
             UpdateRunningCount(1);
             UpdateTrueCount();
             UpdateBetAmount();
@@ -168,6 +214,7 @@ namespace Blackjack_Card_Counter
                 ConfigureSettings();
             }
 
+            UpdateLast5Cards((Button)sender);
             UpdateRunningCount(-1);
             UpdateTrueCount();
             UpdateBetAmount();
@@ -198,6 +245,7 @@ namespace Blackjack_Card_Counter
                 ConfigureSettings();
             }
 
+            UpdateLast5Cards((Button)sender);
             UpdateTrueCount();
             UpdateBetAmount();
             CheckInsurance();
@@ -218,6 +266,66 @@ namespace Blackjack_Card_Counter
             Check9vs7();
             Check20vs5();
             Check20vs6();
+        }
+
+        private void btnUndoLastCard_Click(object sender, EventArgs e)
+        {
+            if (cards.Count == 0)
+            {
+                MessageBox.Show("There are no cards to undo.", "No Cards", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            string lastElement = cards.Last();
+            cards.RemoveAt(cards.Count - 1);
+
+            if (lastElement == "A")
+            {
+                lastElement = "11";
+            }
+            else if (lastElement == "+")
+            {
+                lastElement = "2";
+            }
+            else if (lastElement == "-")
+            {
+                lastElement = "10";
+            }
+
+            int lastCard = Convert.ToInt32(lastElement);
+
+            if (lastCard >= 2 && lastCard <= 6)
+            {
+                UpdateRunningCount(-1);
+            }
+            else if (lastCard == 10 || lastCard == 11)
+            {
+                UpdateRunningCount(1);
+            }
+
+            cardsRemaining += 2;
+            UpdateLast5Cards();
+            UpdateTrueCount();
+            UpdateBetAmount();
+            CheckInsurance();
+            Check16vs9();
+            Check16vs10();
+            Check15vs10();
+            Check13vs2();
+            Check13vs3();
+            Check12vs2();
+            Check12vs3();
+            Check12vs4();
+            Check12vs5();
+            Check12vs6();
+            Check11vsA();
+            Check10vs10();
+            Check10vsA();
+            Check9vs2();
+            Check9vs7();
+            Check20vs5();
+            Check20vs6();
+            ModifyButtons(true);
         }
 
         private void CheckInsurance()
@@ -246,7 +354,7 @@ namespace Blackjack_Card_Counter
 
         private void Check16vs10()
         {
-            if (trueCount >= 0)
+            if (trueCount >= 0 && cardsRemaining != totalCards)
             {
                 lbl16vs10.Text = "16 vs 10: Stand";
             }

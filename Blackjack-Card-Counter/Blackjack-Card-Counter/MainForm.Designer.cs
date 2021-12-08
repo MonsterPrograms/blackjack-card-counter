@@ -66,11 +66,14 @@ namespace Blackjack_Card_Counter
             this.lbl9vs7 = new System.Windows.Forms.Label();
             this.lbl20vs5 = new System.Windows.Forms.Label();
             this.lbl20vs6 = new System.Windows.Forms.Label();
+            this.lblLast5Cards = new System.Windows.Forms.Label();
+            this.lblCardsCounted = new System.Windows.Forms.Label();
+            this.btnUndoLastCard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSeven
             // 
-            this.btnSeven.Location = new System.Drawing.Point(12, 145);
+            this.btnSeven.Location = new System.Drawing.Point(12, 210);
             this.btnSeven.Name = "btnSeven";
             this.btnSeven.Size = new System.Drawing.Size(54, 23);
             this.btnSeven.TabIndex = 0;
@@ -80,7 +83,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnEight
             // 
-            this.btnEight.Location = new System.Drawing.Point(72, 145);
+            this.btnEight.Location = new System.Drawing.Point(72, 210);
             this.btnEight.Name = "btnEight";
             this.btnEight.Size = new System.Drawing.Size(54, 23);
             this.btnEight.TabIndex = 1;
@@ -90,7 +93,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnNine
             // 
-            this.btnNine.Location = new System.Drawing.Point(132, 145);
+            this.btnNine.Location = new System.Drawing.Point(132, 210);
             this.btnNine.Name = "btnNine";
             this.btnNine.Size = new System.Drawing.Size(54, 23);
             this.btnNine.TabIndex = 2;
@@ -100,7 +103,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnFour
             // 
-            this.btnFour.Location = new System.Drawing.Point(12, 174);
+            this.btnFour.Location = new System.Drawing.Point(12, 239);
             this.btnFour.Name = "btnFour";
             this.btnFour.Size = new System.Drawing.Size(54, 23);
             this.btnFour.TabIndex = 3;
@@ -110,7 +113,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnFive
             // 
-            this.btnFive.Location = new System.Drawing.Point(72, 174);
+            this.btnFive.Location = new System.Drawing.Point(72, 239);
             this.btnFive.Name = "btnFive";
             this.btnFive.Size = new System.Drawing.Size(54, 23);
             this.btnFive.TabIndex = 4;
@@ -120,7 +123,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnSix
             // 
-            this.btnSix.Location = new System.Drawing.Point(132, 174);
+            this.btnSix.Location = new System.Drawing.Point(132, 239);
             this.btnSix.Name = "btnSix";
             this.btnSix.Size = new System.Drawing.Size(54, 23);
             this.btnSix.TabIndex = 5;
@@ -130,7 +133,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnAce
             // 
-            this.btnAce.Location = new System.Drawing.Point(12, 203);
+            this.btnAce.Location = new System.Drawing.Point(12, 268);
             this.btnAce.Name = "btnAce";
             this.btnAce.Size = new System.Drawing.Size(54, 23);
             this.btnAce.TabIndex = 6;
@@ -140,7 +143,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnTwo
             // 
-            this.btnTwo.Location = new System.Drawing.Point(72, 203);
+            this.btnTwo.Location = new System.Drawing.Point(72, 268);
             this.btnTwo.Name = "btnTwo";
             this.btnTwo.Size = new System.Drawing.Size(54, 23);
             this.btnTwo.TabIndex = 7;
@@ -150,7 +153,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnThree
             // 
-            this.btnThree.Location = new System.Drawing.Point(132, 203);
+            this.btnThree.Location = new System.Drawing.Point(132, 268);
             this.btnThree.Name = "btnThree";
             this.btnThree.Size = new System.Drawing.Size(54, 23);
             this.btnThree.TabIndex = 8;
@@ -160,11 +163,11 @@ namespace Blackjack_Card_Counter
             // 
             // btnTen
             // 
-            this.btnTen.Location = new System.Drawing.Point(12, 232);
+            this.btnTen.Location = new System.Drawing.Point(12, 297);
             this.btnTen.Name = "btnTen";
             this.btnTen.Size = new System.Drawing.Size(174, 23);
             this.btnTen.TabIndex = 9;
-            this.btnTen.Text = "T J Q K";
+            this.btnTen.Text = "10 J Q K";
             this.btnTen.UseVisualStyleBackColor = true;
             this.btnTen.Click += new System.EventHandler(this.btnMinus_Click);
             // 
@@ -188,7 +191,7 @@ namespace Blackjack_Card_Counter
             // lblRunningCount
             // 
             this.lblRunningCount.AutoSize = true;
-            this.lblRunningCount.Location = new System.Drawing.Point(9, 64);
+            this.lblRunningCount.Location = new System.Drawing.Point(9, 93);
             this.lblRunningCount.Name = "lblRunningCount";
             this.lblRunningCount.Size = new System.Drawing.Size(90, 13);
             this.lblRunningCount.TabIndex = 14;
@@ -196,7 +199,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnMinus
             // 
-            this.btnMinus.Location = new System.Drawing.Point(12, 116);
+            this.btnMinus.Location = new System.Drawing.Point(12, 181);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(84, 23);
             this.btnMinus.TabIndex = 15;
@@ -206,7 +209,7 @@ namespace Blackjack_Card_Counter
             // 
             // btnPlus
             // 
-            this.btnPlus.Location = new System.Drawing.Point(102, 116);
+            this.btnPlus.Location = new System.Drawing.Point(102, 181);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(84, 23);
             this.btnPlus.TabIndex = 16;
@@ -227,7 +230,7 @@ namespace Blackjack_Card_Counter
             // lblTrueCount
             // 
             this.lblTrueCount.AutoSize = true;
-            this.lblTrueCount.Location = new System.Drawing.Point(9, 82);
+            this.lblTrueCount.Location = new System.Drawing.Point(9, 111);
             this.lblTrueCount.Name = "lblTrueCount";
             this.lblTrueCount.Size = new System.Drawing.Size(72, 13);
             this.lblTrueCount.TabIndex = 18;
@@ -236,7 +239,7 @@ namespace Blackjack_Card_Counter
             // lblBetAmount
             // 
             this.lblBetAmount.AutoSize = true;
-            this.lblBetAmount.Location = new System.Drawing.Point(9, 100);
+            this.lblBetAmount.Location = new System.Drawing.Point(9, 129);
             this.lblBetAmount.Name = "lblBetAmount";
             this.lblBetAmount.Size = new System.Drawing.Size(96, 13);
             this.lblBetAmount.TabIndex = 19;
@@ -404,11 +407,42 @@ namespace Blackjack_Card_Counter
             this.lbl20vs6.TabIndex = 37;
             this.lbl20vs6.Text = "10-10 vs 6: Stand";
             // 
+            // lblLast5Cards
+            // 
+            this.lblLast5Cards.AutoSize = true;
+            this.lblLast5Cards.Location = new System.Drawing.Point(9, 147);
+            this.lblLast5Cards.Name = "lblLast5Cards";
+            this.lblLast5Cards.Size = new System.Drawing.Size(98, 13);
+            this.lblLast5Cards.TabIndex = 38;
+            this.lblLast5Cards.Text = "Last 5 Cards: None";
+            // 
+            // lblCardsCounted
+            // 
+            this.lblCardsCounted.AutoSize = true;
+            this.lblCardsCounted.Location = new System.Drawing.Point(9, 165);
+            this.lblCardsCounted.Name = "lblCardsCounted";
+            this.lblCardsCounted.Size = new System.Drawing.Size(122, 13);
+            this.lblCardsCounted.TabIndex = 39;
+            this.lblCardsCounted.Text = "Cards Counted: 0 of 416";
+            // 
+            // btnUndoLastCard
+            // 
+            this.btnUndoLastCard.Location = new System.Drawing.Point(12, 67);
+            this.btnUndoLastCard.Name = "btnUndoLastCard";
+            this.btnUndoLastCard.Size = new System.Drawing.Size(174, 23);
+            this.btnUndoLastCard.TabIndex = 40;
+            this.btnUndoLastCard.Text = "Undo Last Card";
+            this.btnUndoLastCard.UseVisualStyleBackColor = true;
+            this.btnUndoLastCard.Click += new System.EventHandler(this.btnUndoLastCard_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 338);
+            this.Controls.Add(this.btnUndoLastCard);
+            this.Controls.Add(this.lblCardsCounted);
+            this.Controls.Add(this.lblLast5Cards);
             this.Controls.Add(this.lbl20vs6);
             this.Controls.Add(this.lbl20vs5);
             this.Controls.Add(this.lbl9vs7);
@@ -494,6 +528,9 @@ namespace Blackjack_Card_Counter
         private System.Windows.Forms.Label lbl9vs7;
         private System.Windows.Forms.Label lbl20vs5;
         private System.Windows.Forms.Label lbl20vs6;
+        private System.Windows.Forms.Label lblLast5Cards;
+        private System.Windows.Forms.Label lblCardsCounted;
+        private System.Windows.Forms.Button btnUndoLastCard;
     }
 }
 

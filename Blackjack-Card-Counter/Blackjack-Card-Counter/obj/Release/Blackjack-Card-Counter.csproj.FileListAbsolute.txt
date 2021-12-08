@@ -7,3 +7,4 @@ C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Re
 C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Release\Blackjack-Card-Counter.exe
 C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Release\Blackjack-Card-Counter.pdb
 C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Release\Blackjack_Card_Counter.MainForm.resources
+C:\Users\monst\source\repos\Blackjack-Card-Counter\Blackjack-Card-Counter\obj\Release\Blackjack-Card-Counter.csproj.AssemblyReference.cache
