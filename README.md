@@ -5,9 +5,9 @@ Features:
 - Calculates the running count and true count using Hi-Lo system.
 - Tells you the betting deviations using 1-8 bet spread.
 - Tells you the playing deviations using Illustrious 18 (assumes the dealer stands on soft 17).
-- Tells you how many cards you have entered out of the total amount of cards in the shoe
-- Tells you the last 5 cards you have entered
-- Allows you to undo the last card you have entered incase you have made an error
+- Tells you how many cards you have entered out of the total amount of cards in the shoe.
+- Tells you the last 5 cards you have entered.
+- Allows you to undo the last card you have entered incase you have made an error.
 
 How to use:
 - Enter the number of decks that are in the shoe (typically 8 decks).
